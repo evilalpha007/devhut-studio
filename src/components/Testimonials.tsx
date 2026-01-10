@@ -73,16 +73,15 @@ const ScrollingColumn = ({ items, reverse = false }: { items: typeof testimonial
               <Image src={item.avatar} alt={item.name} fill className="object-cover" />
             </div>
             <div>
-              <h4 className="font-bold text-lg">{item.name}</h4>
+              <h4 className=" text-lg">{item.name}</h4>
               <p className="text-xs text-muted-foreground">{item.role}</p>
             </div>
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-4 h-4 ${
-                    i < Math.floor(item.rating) ? "fill-primary text-primary" : "text-muted-foreground/30"
-                  }`}
+                  className={`w-4 h-4 ${i < Math.floor(item.rating) ? "fill-brand-blue-700 text-brand-blue-700" : "text-muted-foreground/30"
+                    }`}
                 />
               ))}
             </div>
@@ -98,24 +97,46 @@ const ScrollingColumn = ({ items, reverse = false }: { items: typeof testimonial
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+    <section className="bg-background py-6 sm:py-14  relative overflow-hidden poppins">
 
-      <div className="container mx-auto px-4 max-w-[1440px]">
+
+      <div className="container-1 mx-auto px-4 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
+
           {/* Left Side */}
           <div className="lg:col-span-5 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left transition-all duration-700">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="text-xs font-bold text-primary uppercase tracking-widest">99 Testimonials</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray-blue border border-brand-blue-700">
+              <span className="text-xs  text-brand-blue-700 uppercase tracking-widest">99 Testimonials</span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-              Our Users <br />
-              <span className="text-primary">Talk About Us</span>
-            </h2>
+            <motion.h1
+              className="text-5xl md:text-7xl tracking-tight leading-[1.1]"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: { transition: { staggerChildren: 0.2 } }
+              }}
+            >
+              <motion.span
+                className="block"
+                variants={{
+                  hidden: { opacity: 0, x: -40, y: 40 },
+                  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                }}
+              >
+                Our Users
+              </motion.span>
+              <motion.span
+                className="block text-brand-blue-700"
+                variants={{
+                  hidden: { opacity: 0, x: -40, y: 40 },
+                  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                }}
+              >
+                Talk About Us
+              </motion.span>
+            </motion.h1>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
               <div className="flex -space-x-3">
@@ -124,20 +145,20 @@ export function Testimonials() {
                     <Image src={`https://i.pravatar.cc/100?u=user${i}`} alt="user" fill className="object-cover" />
                   </div>
                 ))}
-                <div className="w-12 h-12 rounded-full border-4 border-background bg-primary flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-12 h-12 rounded-full border-4 border-background bg-primary flex items-center justify-center text-white  text-sm">
                   +1k
                 </div>
               </div>
               <div className="text-left">
                 <div className="flex items-center gap-1">
-                  <span className="text-2xl font-bold">4.8/5</span>
+                  <span className="text-2xl ">4.8/5</span>
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="w-2 h-2 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground font-medium">Based on 14k+ reviews</p>
+                <p className="text-sm text-muted-foreground ">Based on 14k+ reviews</p>
               </div>
             </div>
           </div>
