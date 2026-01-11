@@ -8,7 +8,7 @@ const Features = () => {
 
 
     return (
-        <section className="py-20 md:py-32 bg-white container-1">
+        <section className="py-20 md:py-32 container-1">
             <div className="flex flex-col items-center text-center mb-16 md:mb-24">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue-100 text-brand-blue text-sm font-semibold mb-6">
                     <Crown size={16} />

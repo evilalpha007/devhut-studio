@@ -19,14 +19,6 @@ const cards = [
   {
     title: "Scale Your Agency with Innovation.",
     description: "Our tools and expertise are designed to simplify your workflow, allowing you to focus on what matters most.",
-    // For `#1a1a1a`, I will use a new variable or valid one. Let's use `var(--brand-blue-800)` which is `#071633` (closeish) or just define `#1a1a1a` in globals as `--color-charcoal`?
-    // Let's use `var(--brand-blue-800)` for now or just standard `black`. It's a "Step 2" card.
-    // Let's stick to `var(--brand-blue-900)` for consistency? No, they are different steps.
-    // Step 2 is `#1a1a1a`.
-    // Step 3 is `#00AEEB`.
-    // I'll Map:
-    // 1 -> var(--brand-blue-900)
-    // 2 -> var(--brand-neutral-900) (I'll add this to globals)
     color: "var(--brand-neutral-900)",
   },
   {
@@ -61,7 +53,7 @@ export function FooterCTA() {
       timeline.fromTo(
         card,
         {
-          yPercent: 120, // Start below
+          yPercent: 100, // Start below
         },
         {
           yPercent: 0,
@@ -122,7 +114,7 @@ export function FooterCTA() {
 
       {/* Cards Container: Pins at Center */}
       <div ref={triggerRef} className="w-full relative z-20 bg-white poppins">
-        <div className="h-[75vh] w-full container-1 mx-auto px-4 md:px-14 relative">
+        <div className="h-[650px] w-full container-1 mx-auto px-4 md:px-14 relative">
           <div className="grid grid-cols-1 grid-rows-1 w-full h-full pb-8">
             {cards.map((card, index) => (
               <div

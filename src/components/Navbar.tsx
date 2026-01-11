@@ -41,7 +41,7 @@ export function Navbar() {
 
   return (
     <section className="container-1 ">
-      <nav className="fixed top-0 left-0 right-0 z-150  backdrop-blur-full ">
+      <nav className="fixed top-2 left-0 right-0 z-150  backdrop-blur-full ">
         <div className="container-1 mx-auto px-1 py-4 flex items-center justify-between">
 
           {/* Logo Section */}
