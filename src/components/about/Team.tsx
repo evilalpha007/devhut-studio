@@ -43,7 +43,7 @@ const Team = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex items-center gap-2 px-4 py-1.5 rounded-full  border border-blue-100 text-blue-600 mb-6"
+                        className="flex items-center gap-2 px-4 py-1.5 rounded-full  border border-blue-100 bg-brand-blue-50/50 text-brand-blue mb-6"
                     >
                         <Users size={14} />
                         <span className="text-sm font-medium">Team</span>
