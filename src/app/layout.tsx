@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import TransitionProvider from "@/components/TransitionProvider";
-import SplashProvider from "@/components/SplashProvider";
+import { ThemeProvider } from "@/components/common/theme-provider";
+import { Navbar } from "@/components/common/Navbar";
+import { Footer } from "@/components/home/Footer";
+import TransitionProvider from "@/components/common/TransitionProvider";
+import SplashProvider from "@/components/home/SplashProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -63,7 +63,7 @@ export default function RootLayout({
         >
           <SplashProvider>
             <TransitionProvider>
-            <Navbar />
+              <Navbar />
 
               {children}
             </TransitionProvider>

@@ -105,7 +105,7 @@ export function Testimonials() {
 
           {/* Left Side */}
           <div className="lg:col-span-5 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left transition-all duration-700">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray-blue border border-brand-blue-700">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-blue-100 bg-brand-blue-50/50 border-[1px]">
               <span className="text-xs  text-brand-blue-700 uppercase tracking-widest">99 Testimonials</span>
             </div>
 

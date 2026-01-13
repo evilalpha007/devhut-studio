@@ -1,16 +1,15 @@
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import Getstarted from "@/components/Getstarted";
-import Features from "@/components/Features";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/home/Hero";
+import Getstarted from "@/components/home/Getstarted";
+import Features from "@/components/home/Features";
+import { Contact } from "@/components/home/Contact";
+import { Footer } from "@/components/home/Footer";
 import { Toaster } from "@/components/ui/sonner";
-import AdditionalFeature from "@/components/AdditionalFeature";
-import { FooterCTA } from "@/components/FooterCTA";
-import SeeYourWealth from "@/components/SeeYourWealth";
-import { Testimonials } from "@/components/Testimonials";
-import Blog from "@/components/Blog";
-import { FAQ } from "@/components/FAQ";
+import AdditionalFeature from "@/components/home/AdditionalFeature";
+import { FooterCTA } from "@/components/home/FooterCTA";
+import SeeYourWealth from "@/components/home/SeeYourWealth";
+import { Testimonials } from "@/components/home/Testimonials";
+import Blog from "@/components/home/Blog";
+import { FAQ } from "@/components/home/FAQ";
 export default function Home() {
   return (
     <main className="relative min-h-screen">
@@ -23,7 +22,7 @@ export default function Home() {
       <SeeYourWealth />
       <Testimonials />
       <Blog />
-      <FAQ/>
+      <FAQ />
       {/* <Contact /> */}
 
       <Toaster />

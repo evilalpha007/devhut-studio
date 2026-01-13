@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { AnimatePresence, easeIn, easeOut, motion } from "framer-motion";
-import { SplashScreen } from "./SplashScreen";
+import { SplashScreen } from "../common/SplashScreen";
 
 export default function SplashProvider({
     children,

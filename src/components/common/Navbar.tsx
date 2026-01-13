@@ -30,11 +30,9 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/", active: true },
-    { name: "Features", href: "/#features" },
-    { name: "Test Anim", href: "/test-animation" },
-    { name: "Pricing", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "All pages", href: "#" },
+    { name: "Features", href: "/features" },
+    { name: "About", href: "/about" },
+    { name: "All Pages", href: "/allpages" },
   ];
 
   if (!mounted) return null;
@@ -76,7 +74,7 @@ export function Navbar() {
                         key={i}
                         variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
                         transition={{ duration: 0.3, delay: 0.02 * i }}
-                        className="text-xl font-rounded text-brand-blue-800 dark:text-white leading-tight tracking-tight block"
+                        className={`text-xl font-rounded text-brand-blue-800 dark:text-white leading-tight tracking-tight block ${i >= 3 ? "font-medium" : ""}`}
                       >
                         {l}
                       </motion.span>
@@ -88,7 +86,7 @@ export function Navbar() {
                         key={i}
                         variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
                         transition={{ duration: 0.3, delay: 0.02 * i }}
-                        className="text-xl font-rounded text-brand-blue leading-tight tracking-tight block"
+                        className={`text-xl font-rounded text-brand-blue leading-tight tracking-tight block ${i >= 3 ? "font-medium" : ""}`}
                       >
                         {l}
                       </motion.span>
@@ -264,7 +262,7 @@ export function Navbar() {
                                 key={i}
                                 variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
                                 transition={{ duration: 0.3, delay: 0.02 * i }}
-                                className="text-xl font-rounded text-white dark:text-white leading-tight tracking-tight block"
+                                className={`text-xl font-rounded text-white dark:text-white leading-tight tracking-tight block ${i >= 3 ? "font-bold" : ""}`}
                               >
                                 {l}
                               </motion.span>
@@ -276,7 +274,7 @@ export function Navbar() {
                                 key={i}
                                 variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
                                 transition={{ duration: 0.3, delay: 0.02 * i }}
-                                className="text-xl font-rounded text-white dark:text-white leading-tight tracking-tight block"
+                                className={`text-xl font-rounded text-white dark:text-white leading-tight tracking-tight block ${i >= 3 ? "font-bold" : ""}`}
                               >
                                 {l}
                               </motion.span>
