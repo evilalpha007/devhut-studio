@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +13,7 @@ const MotionLink = motion.create(Link);
 export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -37,10 +39,10 @@ export function Navbar() {
 
   if (!mounted) return null;
 
-  return (
+  return (  
     <section className="container-1 ">
       <nav className="fixed top-2 left-0 right-0 z-150  backdrop-blur-full ">
-        <div className="container-1 mx-auto px-1 py-4 flex items-center justify-between">
+        <div className="container-1 mx-auto px-1 py-6 flex items-center justify-between">
 
           {/* Logo Section */}
           <div className="flex items-center gap-2">
@@ -126,6 +128,9 @@ export function Navbar() {
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex items-center gap-4  bg-white rounded-full p-2 ">
             {navLinks.map((link) => {
+              const isRouteActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              const isActive = link.active || isRouteActive;
+
               return (
                 <MotionLink
                   key={link.name}
@@ -134,7 +139,7 @@ export function Navbar() {
                   whileHover="hovered"
                   className={`
                   group px-5 py-2 rounded-full text-base font-medium transition-all duration-300 flex items-center relative overflow-hidden
-                  ${link.active
+                  ${isActive
                       ? "bg-brand-blue-50 text-brand-blue shadow-sm"
                       : "text-muted-foreground hover:bg-brand-blue-50/50"
                     }
@@ -144,7 +149,7 @@ export function Navbar() {
                   <span
                     className={`
                     h-1.5 rounded-full bg-brand-blue transition-all duration-300 ease-in-out
-                    ${link.active
+                    ${isActive
                         ? "w-1.5 mr-2"
                         : "w-0 mr-0 opacity-0 group-hover:w-1.5 group-hover:mr-2 group-hover:opacity-100"
                       }
